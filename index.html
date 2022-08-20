@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctor's Appointment App</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <div id="monthDisplay"></div>
+        <div>
+          <button id="backButton">Back</button>
+          <button id="nextButton">Next</button>
+        </div>
+
+        <div class="right">
+          <button id="show-appointment">Create Appointment</button>
+        </div>
+      </div>
+
+      <div id="weekdays">
+        <div>Sunday</div>
+        <div>Monday</div>
+        <div>Tuesday</div>
+        <div>Wednesday</div>
+        <div>Thursday</div>
+        <div>Friday</div>
+        <div>Saturday</div>
+      </div>
+
+      <div id="calendar"></div>
+    </div>
+
+    <div id="newEventModal">
+      <h2>New Event</h2>
+
+      <input id="eventTitleInput" placeholder="Event Title" />
+
+      <button id="saveButton">Save</button>
+      <button id="cancelButton">Cancel</button>
+    </div>
+
+    <div id="deleteEventModal">
+      <h2>Event</h2>
+
+      <p id="eventText"></p>
+
+      <button id="deleteButton">Delete</button>
+      <button id="closeButton">Close</button>
+    </div>
+
+    <div id="modalBackDrop"></div>
+
+    <form class="popup" onsubmit="submitForm(event)" action="output.html">
+      <div class="close-btn">&times;</div>
+      <div class="form">
+        <h2>Create Appointment</h2>
+        <div class="form-element">
+          <label for="firstName">First Name:</label>
+          <input
+            type="text"
+            id="firstName"
+            maxlength="40"
+            required
+            placeholder="Enter your first name..."
+          />
+        </div>
+
+        <div class="form-element">
+          <label for="lastName">Last Name:</label>
+          <input
+            type="text"
+            id="lastName"
+            maxlength="40"
+            required
+            placeholder="Enter your last name..."
+          />
+        </div>
+
+        <div class="form-element">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            required
+            placeholder="Enter your email..."
+          />
+        </div>
+
+        <div id="combined-form-element">
+          <div class="form-element">
+            <label for="gender">Gender:</label>
+            <select name="gender" id="gender">
+              <option value="none" selected>Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">other</option>
+            </select>
+          </div>
+
+          <div class="form-element">
+            <label for="age">Age:</label>
+            <input type="number" id="age" placeholder="Your age..." />
+          </div>
+        </div>
+
+        <div class="form-element">
+          <label for="appointmentdaytime">Appointment (date and time):</label>
+          <input
+            type="datetime-local"
+            id="appointmentdaytime"
+            name="appointmentdaytime"
+            required
+          />
+        </div>
+
+        <div class="form-element">
+          <button>Create Now</button>
+        </div>
+      </div>
+    </form>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
